@@ -12,15 +12,16 @@ const authorText = document.getElementById('author');
 const quoteBtn = document.getElementById('quote-btn');
 const themeBtn = document.getElementById('theme-btn');
 
-// TODO 1: Write a function to pick a random quote from the array 
-// and update the HTML text (`quoteText` and `authorText`).
+// Function to pick a random quote
 function getRandomQuote() {
-    // Your code here
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    quoteText.textContent = `"${quotes[randomIndex].text}"`;
+    authorText.textContent = `- ${quotes[randomIndex].author}`;
 }
 
-// TODO 2: Write a function to toggle the class 'dark-mode' on the <body> element.
+// Function to toggle dark mode
 function toggleTheme() {
-    // Your code here
+    document.body.classList.toggle('dark-mode');
 }
 
 // Event Listeners
